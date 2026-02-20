@@ -1,0 +1,12 @@
+:root {
+  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+
+  --bg-black: #050505;
+  --bg-deep-blue: #06143a;
+  --text-main: #f3f6ff;
+  --text-muted: #97a8d0;
+
+  --container-max-width: 1240px;
+  --container-inline: clamp(20px, 4vw, 64px);
+}

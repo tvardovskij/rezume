@@ -1,0 +1,28 @@
+.summary {
+  position: relative;
+  background: #050505;
+  padding-block: 70px 0;
+}
+
+.summary__content {
+  display: grid;
+  gap: 24px;
+}
+
+.summary__title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  max-width: 18ch;
+}
+
+.summary__list {
+  display: grid;
+  gap: 14px;
+}
+
+.summary__item {
+  color: #c7d2ee;
+  max-width: 65ch;
+  line-height: 1.55;
+  font-size: clamp(1rem, 1.45vw, 1.22rem);
+}

@@ -1,0 +1,14 @@
+.app-shell {
+  background: var(--bg-black);
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-black);
+}
+
+.container {
+  width: min(var(--container-max-width), calc(100% - (2 * var(--container-inline))));
+  margin-inline: auto;
+}
