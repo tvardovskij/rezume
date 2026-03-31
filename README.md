@@ -12,7 +12,24 @@
 npm run dev
 npm run build
 npm run lint
+npm run seo:generate
 ```
+
+## SEO Autogeneration
+
+SEO-файлы и мета-теги генерируются автоматически перед `dev/build/preview`:
+
+- `index.html` (из шаблона `index.template.html`);
+- `public/robots.txt`;
+- `public/sitemap.xml`;
+- `public/site.webmanifest`.
+
+Для настройки создайте `.env` на основе `.env.example` и измените:
+
+- `SEO_SITE_URL` (обязательно ваш production URL);
+- `SEO_TITLE`, `SEO_DESCRIPTION`, `SEO_OG_DESCRIPTION`, `SEO_TWITTER_DESCRIPTION`;
+- `SEO_KEYWORDS`;
+- verification-токены (`SEO_GOOGLE_SITE_VERIFICATION`, `SEO_YANDEX_VERIFICATION`, `SEO_BING_VERIFICATION`) при необходимости.
 
 ## GIF Optimization
 

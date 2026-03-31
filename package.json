@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "seo:generate": "node ./scripts/generate-seo.mjs",
+    "dev": "npm run seo:generate && vite",
+    "build": "npm run seo:generate && tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "npm run seo:generate && vite preview",
     "optimize:hero-media": "powershell -ExecutionPolicy Bypass -File ./scripts/optimize-hero-media.ps1"
   },
   "dependencies": {

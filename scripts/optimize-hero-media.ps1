@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$InputGif = (Join-Path $PSScriptRoot "../public/media/hero/source/hero-original.gif"),
   [string]$OutputDir = (Join-Path $PSScriptRoot "../public/media/hero"),
   [int]$Width = 1920,
