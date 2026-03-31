@@ -1,28 +1,327 @@
 .summary {
   position: relative;
   background: #050505;
-  padding-block: 70px 0;
+  padding-block: 76px 138px;
 }
 
 .summary__content {
   display: grid;
-  gap: 24px;
+  gap: 44px;
+}
+
+.summary__head {
+  display: grid;
+  gap: 14px;
+  max-width: 72rem;
+}
+
+.summary__eyebrow {
+  color: rgba(136, 165, 232, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .summary__title {
   font-family: var(--font-display);
-  font-size: 42px;
-  max-width: 18ch;
+  font-size: clamp(2.85rem, 4.3vw, 5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: #fcfdff;
 }
 
-.summary__list {
+.summary__lead {
+  max-width: 35rem;
+  color: rgba(201, 214, 241, 0.88);
+  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+  line-height: 1.72;
+  padding-bottom: 8px;
+}
+
+.summary__grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 52px 32px;
+  align-items: start;
+}
+
+.summary-project {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+.summary-project--msk-landing {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.summary-project--msk-billing {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.summary-project--voldrop {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.summary-project__visual {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(118, 136, 180, 0.14);
+  background: linear-gradient(180deg, #100f18 0%, #08090e 100%);
+}
+
+.summary-project__visual::before,
+.summary-project__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.summary-project__visual::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 20%);
+}
+
+.summary-project--msk-landing .summary-project__visual {
+  place-items: center;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.summary-project--msk-landing .summary-project__visual::before,
+.summary-project--msk-landing .summary-project__visual::after {
+  content: none;
+}
+
+.summary-project--msk-billing .summary-project__visual {
+  padding: 20px 10px 0;
+  place-items: center;
+  background: linear-gradient(180deg, #171224 0%, #090a10 100%);
+}
+
+.summary-project--msk-billing .summary-project__visual::before {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(160, 93, 255, 0.34), transparent 32%),
+    radial-gradient(circle at 30% 86%, rgba(43, 80, 185, 0.12), transparent 28%);
+}
+
+.summary-project--voldrop .summary-project__visual {
+  padding: 20px 10px 0;
+  place-items: center;
+  background: linear-gradient(180deg, #141416 0%, #070708 100%);
+}
+
+.summary-project--voldrop .summary-project__visual::before {
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.07), transparent 28%),
+    radial-gradient(circle at 70% 24%, rgba(255, 255, 255, 0.05), transparent 22%);
+}
+
+.summary-project__picture {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.summary-project--msk-landing .summary-project__picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.summary-project__image {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 56px rgba(0, 0, 0, 0.38));
+}
+
+.summary-project--msk-landing .summary-project__image {
+  width: min(100%, 560px);
+  margin-inline: auto;
+  transform: none;
+}
+
+.summary-project--msk-billing .summary-project__image {
+  width: min(100%, 900px);
+}
+
+.summary-project--voldrop .summary-project__image {
+  width: min(100%, 940px);
+}
+
+.summary-project__body {
+  display: grid;
+  align-content: start;
   gap: 14px;
 }
 
-.summary__item {
-  color: #c7d2ee;
-  max-width: 65ch;
-  line-height: 1.55;
-  font-size: clamp(1rem, 1.45vw, 1.22rem);
+.summary-project__category {
+  color: rgba(135, 161, 219, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summary-project__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.05rem, 2.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: #fcfdff;
+}
+
+.summary-project__description {
+  max-width: 37rem;
+  color: rgba(205, 218, 244, 0.82);
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.68;
+}
+
+.summary-project--msk-billing .summary-project__description,
+.summary-project--voldrop .summary-project__description {
+  min-height: 12.1em;
+}
+
+.summary-project__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.summary-project__badge {
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(116, 135, 181, 0.24);
+  background: transparent;
+  color: rgba(231, 237, 251, 0.86);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@media (max-width: 1180px) {
+  .summary {
+    padding-block: 64px 116px;
+  }
+
+  .summary__head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 24px;
+  }
+
+  .summary-project--msk-landing {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  .summary-project--msk-billing {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .summary-project--voldrop {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 42rem;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .summary {
+    padding-block: 56px 96px;
+  }
+
+  .summary__content {
+    gap: 38px;
+  }
+
+  .summary__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .summary-project--msk-landing,
+  .summary-project--msk-billing,
+  .summary-project--voldrop {
+    grid-column: auto;
+    grid-row: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .summary-project--msk-billing .summary-project__description,
+  .summary-project--voldrop .summary-project__description {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .summary {
+    padding-block: 52px 82px;
+  }
+
+  .summary__head {
+    gap: 12px;
+  }
+
+  .summary__eyebrow {
+    font-size: 12px;
+  }
+
+  .summary__lead {
+    font-size: 1rem;
+  }
+
+  .summary-project {
+    gap: 18px;
+  }
+
+  .summary-project__visual {
+    border-radius: 22px;
+  }
+
+  .summary-project--msk-billing .summary-project__image,
+  .summary-project--voldrop .summary-project__image {
+    transform: translateY(6%);
+  }
+
+  .summary-project--msk-landing .summary-project__image {
+    transform: translateY(2%);
+  }
+
+  .summary-project__category {
+    font-size: 11px;
+  }
+
+  .summary-project__description {
+    font-size: 0.98rem;
+    line-height: 1.63;
+  }
+
+  .summary-project__badge {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
 }

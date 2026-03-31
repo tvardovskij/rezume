@@ -21,15 +21,7 @@
     %SEO_OPTIONAL_META_TAGS%
 
     <link rel="canonical" href="%SEO_CANONICAL_URL%" />
-    <link rel="alternate" href="%SEO_CANONICAL_URL%" hreflang="%SEO_HREFLANG%" />
-    <link rel="alternate" href="%SEO_CANONICAL_URL%" hreflang="x-default" />
-    <link
-      rel="preload"
-      as="image"
-      href="/media/hero/hero-poster.webp"
-      fetchpriority="high"
-      type="image/webp"
-    />
+    %SEO_ALTERNATE_LINKS%
     <link rel="manifest" href="%SEO_MANIFEST_PATH%" />
     <link rel="icon" type="image/svg+xml" href="%SEO_ICON_SVG_PATH%" />
     <link rel="apple-touch-icon" href="%SEO_APPLE_TOUCH_ICON_PATH%" />
@@ -57,33 +49,14 @@
     <meta name="twitter:image" content="%SEO_TWITTER_IMAGE_URL%" />
     <meta name="twitter:image:alt" content="%SEO_TWITTER_IMAGE_ALT%" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-      />
-    </noscript>
-
     <script type="application/ld+json">
 %SEO_JSON_LD%
     </script>
+    %SEO_INITIAL_SCRIPT%
   </head>
   <body>
     <noscript>%SEO_NOSCRIPT%</noscript>
     <div id="root" role="main"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="%SEO_APP_ENTRY_PATH%"></script>
   </body>
 </html>

@@ -1,0 +1,262 @@
+{
+  "brand": {
+    "name": "Dmitry Tvardovsky",
+    "shortName": "Tvardovsky",
+    "role": "E2E Lead Fullstack Engineer",
+    "authorAltName": "Дмитрий Твардовский",
+    "githubUrl": "https://github.com/sdhgwow"
+  },
+  "locales": {
+    "en": {
+      "lang": "en",
+      "langCode": "en-US",
+      "ogLocale": "en_US",
+      "nav": {
+        "homeLabel": "Go to top",
+        "logoAlt": "Dmitry Tvardovsky wordmark",
+        "about": "About me",
+        "projects": "Projects",
+        "github": "GitHub",
+        "languageSwitchLabel": "Select language"
+      },
+      "hero": {
+        "title": "I'm an E2E Lead Fullstack Engineer",
+        "leadStart": "I live inside the products I build.",
+        "leadEnd": "For me, frontend and backend are one system: I shape architecture, ship interfaces, build backend logic, and support production both solo and with a team.",
+        "stackLabel": "Core stack",
+        "metrics": [
+          {
+            "value": "2+",
+            "caption": "years of commercial interface engineering"
+          },
+          {
+            "value": "25+",
+            "caption": "product features and landing pages delivered"
+          },
+          {
+            "value": "12+",
+            "caption": "projects built with React / TypeScript / Next.js"
+          },
+          {
+            "value": "95+",
+            "caption": "Lighthouse Performance score on production"
+          }
+        ]
+      },
+      "about": {
+        "title": "How I work",
+        "bulletPoints": [
+          "I treat frontend and backend as one product system instead of two disconnected zones.",
+          "I care about performance from the first screen, not after release.",
+          "I am comfortable taking ownership of architecture, delivery, and production readiness end to end."
+        ]
+      },
+      "projects": {
+        "eyebrow": "Cases I built myself",
+        "title": "Key projects",
+        "lead": "Three product cases where I owned interface quality, delivery pace, and production readiness.",
+        "items": [
+          {
+            "id": "msk-landing",
+            "category": "Hosting landing",
+            "title": "MskHost Landing",
+            "description": "A marketing landing page for the MskHost infrastructure product. I built the entire frontend myself: adaptive layout, visual system, motion, and the final production-ready client experience. On the backend I only contributed partially.",
+            "badges": [
+              "Frontend solo",
+              "Adaptive + motion UI",
+              "Vite / React / TypeScript"
+            ],
+            "image": {
+              "src": "/images/projects/MSK_LANDING.webp",
+              "alt": "MskHost marketing landing shown on angled mobile mockups",
+              "width": 2682,
+              "height": 2911
+            }
+          },
+          {
+            "id": "msk-billing",
+            "category": "Billing dashboard",
+            "title": "MskHost Billing",
+            "description": "A full billing and account area for MskHost. I designed and implemented the frontend from scratch: dashboard structure, service catalog, navigation, payment UX, and the client-side logic. I also contributed to backend development, but the whole customer-facing interface and UX layer are mine. This case is also about turning a dense service product into a readable, scalable client area that stays fast, clear, and comfortable in everyday use.",
+            "badges": [
+              "Frontend solo",
+              "Billing / dashboard UX",
+              "Backend contribution"
+            ],
+            "image": {
+              "src": "/images/projects/MSK_BILLING.webp",
+              "alt": "MskHost billing dashboard shown on a laptop screen",
+              "width": 3098,
+              "height": 1890
+            }
+          },
+          {
+            "id": "voldrop",
+            "category": "Fullstack e-commerce platform",
+            "title": "VOLDROP",
+            "description": "A fullstack solo case delivered in 10 days. I built the project end to end: architecture, backend logic, product frontend, real-time scenarios, and containerized delivery. It is the clearest example of how I close both the server-side and client-side parts of a product on my own. For me, the value of this project is not only in speed, but in proving that product thinking, implementation quality, and delivery discipline can stay together even under a very tight deadline.",
+            "badges": [
+              "Fullstack solo",
+              "10-day delivery",
+              "React / TypeScript",
+              "Django / PostgreSQL",
+              "FSD / Docker / WebSocket"
+            ],
+            "image": {
+              "src": "/images/projects/VOLDROP.webp",
+              "alt": "VOLDROP clothing marketplace homepage shown on a laptop screen",
+              "width": 3099,
+              "height": 1890
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "Dmitry Tvardovsky | E2E Lead Fullstack Engineer",
+        "description": "I design, build, launch, and support fullstack products end to end: from architecture and interfaces to backend logic and production delivery.",
+        "ogDescription": "Lead fullstack engineer shipping frontend and backend end to end with a strong eye for product quality, speed, and clean delivery.",
+        "twitterDescription": "End-to-end product engineering: React, TypeScript, Django, PostgreSQL, Docker, WebSocket.",
+        "keywords": [
+          "Dmitry Tvardovsky",
+          "E2E Lead",
+          "Fullstack Engineer",
+          "React",
+          "TypeScript",
+          "Django",
+          "PostgreSQL",
+          "Docker",
+          "WebSocket",
+          "frontend portfolio",
+          "fullstack portfolio"
+        ],
+        "noscript": "Enable JavaScript to view this portfolio correctly."
+      }
+    },
+    "ru": {
+      "lang": "ru",
+      "langCode": "ru-RU",
+      "ogLocale": "ru_RU",
+      "nav": {
+        "homeLabel": "На главную",
+        "logoAlt": "Логотип Дмитрия Твардовского",
+        "about": "Обо мне",
+        "projects": "Проекты",
+        "github": "GitHub",
+        "languageSwitchLabel": "Выбор языка"
+      },
+      "hero": {
+        "title": "Я — E2E Lead Fullstack Engineer",
+        "leadStart": "Я живу проектами, которыми занимаюсь.",
+        "leadEnd": "Для меня frontend и backend — это единый организм: я проектирую архитектуру, собираю интерфейсы, реализую серверную логику и поддерживаю production как самостоятельно, так и в команде.",
+        "stackLabel": "Основной стек",
+        "metrics": [
+          {
+            "value": "2+",
+            "caption": "года коммерческой разработки интерфейсов"
+          },
+          {
+            "value": "25+",
+            "caption": "реализованных продуктовых фич и лендингов"
+          },
+          {
+            "value": "12+",
+            "caption": "проектов на React / TypeScript / Next.js"
+          },
+          {
+            "value": "95+",
+            "caption": "оценка Lighthouse Performance на production"
+          }
+        ]
+      },
+      "about": {
+        "title": "Как я работаю",
+        "bulletPoints": [
+          "Смотрю на frontend и backend как на одну продуктовую систему, а не на два изолированных слоя.",
+          "Думаю о скорости, стабильности и качестве интерфейса с первого экрана, а не после релиза.",
+          "Могу закрывать архитектуру, реализацию и production-подготовку end to end."
+        ]
+      },
+      "projects": {
+        "eyebrow": "Кейсы, которые я собрал сам",
+        "title": "Ключевые проекты",
+        "lead": "Три продуктовых кейса, где я отвечал за качество интерфейса, темп разработки и доведение до production-результата.",
+        "items": [
+          {
+            "id": "msk-landing",
+            "category": "Хостинг-лендинг",
+            "title": "MskHost Landing",
+            "description": "Маркетинговый лендинг для инфраструктурного продукта MskHost. Весь frontend здесь сделан мной: адаптивная вёрстка, визуальная система, motion и production-ready клиентский UX. В backend я участвовал точечно.",
+            "badges": [
+              "Frontend solo",
+              "Adaptive + motion UI",
+              "Vite / React / TypeScript"
+            ],
+            "image": {
+              "src": "/images/projects/MSK_LANDING.webp",
+              "alt": "Лендинг MskHost в мобильной подаче",
+              "width": 2682,
+              "height": 2911
+            }
+          },
+          {
+            "id": "msk-billing",
+            "category": "Биллинг и личный кабинет",
+            "title": "MskHost Billing",
+            "description": "Полноценная биллинговая и личная зона для MskHost. Я спроектировал и реализовал frontend с нуля: структуру дашборда, каталог сервисов, навигацию, платежный UX и клиентскую логику. В backend тоже участвовал, но весь пользовательский интерфейс и UX-слой здесь сделаны мной. Этот кейс ещё и про то, как из насыщенного сервисного продукта собрать понятную, масштабируемую и удобную клиентскую зону без ощущения перегруза.",
+            "badges": [
+              "Frontend solo",
+              "Billing / dashboard UX",
+              "Backend contribution"
+            ],
+            "image": {
+              "src": "/images/projects/MSK_BILLING.webp",
+              "alt": "Биллинг-панель MskHost на ноутбуке",
+              "width": 3098,
+              "height": 1890
+            }
+          },
+          {
+            "id": "voldrop",
+            "category": "Fullstack e-commerce платформа",
+            "title": "VOLDROP",
+            "description": "Полностью fullstack solo-кейс, который я реализовал за 10 дней. Здесь я собрал проект целиком: архитектуру, backend-логику, продуктовый frontend, real-time сценарии и контейнеризацию. Это самый прямой пример того, как я один закрываю и серверную, и клиентскую часть продукта. Для меня он важен ещё и тем, что показывает: даже в очень жёсткий срок я могу удержать качество реализации, продуктовый фокус и нормальную дисциплину delivery.",
+            "badges": [
+              "Fullstack solo",
+              "10 дней",
+              "React / TypeScript",
+              "Django / PostgreSQL",
+              "FSD / Docker / WebSocket"
+            ],
+            "image": {
+              "src": "/images/projects/VOLDROP.webp",
+              "alt": "Главная страница VOLDROP на ноутбуке",
+              "width": 3099,
+              "height": 1890
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "Дмитрий Твардовский | E2E Lead Fullstack Engineer",
+        "description": "Делаю fullstack-продукты end to end: проектирую архитектуру, собираю интерфейсы, пишу backend-логику, запускаю и сопровождаю production.",
+        "ogDescription": "Lead fullstack engineer с фокусом на продукт, скорость, архитектуру и реальное качество delivery от интерфейса до backend.",
+        "twitterDescription": "End-to-end разработка продуктов: React, TypeScript, Django, PostgreSQL, Docker, WebSocket.",
+        "keywords": [
+          "Дмитрий Твардовский",
+          "Dmitry Tvardovsky",
+          "E2E Lead",
+          "Fullstack Engineer",
+          "React",
+          "TypeScript",
+          "Django",
+          "PostgreSQL",
+          "Docker",
+          "WebSocket",
+          "портфолио разработчика",
+          "резюме fullstack разработчика"
+        ],
+        "noscript": "Для корректного просмотра портфолио включите JavaScript."
+      }
+    }
+  }
+}

@@ -1,73 +1,103 @@
-﻿import { Container } from "@/shared/ui/Container";
-import { heroMetrics, heroTechIcons, showHeroTech } from "./hero.data";
-import "./hero.css";
+import type { MouseEvent } from 'react'
+import { Container } from '@/shared/ui/Container'
+import { useSiteLocale } from '@/app/providers/site-locale-context'
+import { HeroAmbientLogo } from './HeroAmbientLogo'
+import { heroTechIcons, showHeroTech } from './hero.data'
+import './hero.css'
 
 export function HeroSection() {
+  const { buildLocaleHref, content, githubUrl, locale, switchLocale } = useSiteLocale()
+  const { hero, nav } = content
+
+  function handleLocaleClick(event: MouseEvent<HTMLAnchorElement>, nextLocale: 'en' | 'ru') {
+    if (nextLocale === locale) {
+      event.preventDefault()
+      return
+    }
+
+    event.preventDefault()
+    switchLocale(nextLocale)
+  }
+
   return (
     <header className="hero" id="hero">
       <div className="hero__media" aria-hidden="true">
-        <img
-          className="hero__poster"
-          src="/media/hero/hero-poster.webp"
-          alt=""
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-        <img
-          className="hero__gif"
-          src="/media/hero/hero-bg.optimized.gif"
-          alt=""
-          loading="eager"
-          fetchPriority="low"
-          decoding="async"
-        />
+        <div className="hero__effect-stage">
+          <div className="hero__effect-blur">
+            <div className="hero__effect-layer hero__effect-layer--animation">
+              <HeroAmbientLogo />
+            </div>
+            <div className="hero__effect-layer hero__effect-layer--filters" />
+          </div>
+        </div>
         <div className="hero__layer hero__layer--grain" />
-        <div className="hero__layer hero__layer--blue" />
-        <div className="hero__layer hero__layer--circles" />
-        <div className="hero__layer hero__layer--blur" />
         <div className="hero__fadeout" />
       </div>
 
       <Container className="hero__content">
         <nav className="hero__nav">
-          <a className="hero__brand" href="#hero" aria-label="На главную">
+          <a className="hero__brand" href="#hero" aria-label={nav.homeLabel}>
             <img
               className="hero__brand-full-logo"
               src="/logo-full.svg"
-              alt="Логотип Дмитрия"
+              alt={nav.logoAlt}
+              width={150}
+              height={45}
               loading="eager"
               decoding="async"
             />
           </a>
-          <ul className="hero__menu">
-            <li>
-              <a href="#about">Обо мне</a>
-            </li>
-            <li>
-              <a href="#projects">Проекты</a>
-            </li>
-            <li>
-              <a href="#contacts">Контакты</a>
-            </li>
-          </ul>
+          <div className="hero__nav-actions">
+            <ul className="hero__menu">
+              <li>
+                <a href="#about">{nav.about}</a>
+              </li>
+              <li>
+                <a href="#projects">{nav.projects}</a>
+              </li>
+              <li>
+                <a href={githubUrl} target="_blank" rel="noreferrer">
+                  {nav.github}
+                </a>
+              </li>
+            </ul>
+
+            <div className="hero__locale-switch" role="group" aria-label={nav.languageSwitchLabel}>
+              <a
+                href={buildLocaleHref('ru')}
+                className={locale === 'ru' ? 'is-active' : undefined}
+                lang="ru"
+                aria-current={locale === 'ru' ? 'page' : undefined}
+                onClick={(event) => handleLocaleClick(event, 'ru')}
+              >
+                RU
+              </a>
+              <a
+                href={buildLocaleHref('en')}
+                className={locale === 'en' ? 'is-active' : undefined}
+                lang="en"
+                aria-current={locale === 'en' ? 'page' : undefined}
+                onClick={(event) => handleLocaleClick(event, 'en')}
+              >
+                EN
+              </a>
+            </div>
+          </div>
         </nav>
 
-        <div className="hero__intro">
+        <div className="hero__intro" id="about">
           <div className="hero__title-wrap">
-            <h1 className="hero__title">
-              Я — E2E Lead Fullstack Engineer
-            </h1>
+            <h1 className="hero__title">{hero.title}</h1>
           </div>
 
           <p className="hero__lead">
-          Я живу проектами, которыми занимаюсь. <br />
-          Для меня frontend и backend — это единый организм: я проектирую, реализую, запускаю и поддерживаю крупные системы, работая как самостоятельно, так и в команде
+            {hero.leadStart} <br />
+            {hero.leadEnd}
           </p>
         </div>
 
         {showHeroTech && (
-          <ul className="hero__stack" aria-label="Основной стек">
+          <ul className="hero__stack" aria-label={hero.stackLabel}>
             {heroTechIcons.map((tech) => (
               <li
                 key={tech.id}
@@ -79,6 +109,9 @@ export function HeroSection() {
                   className="hero__stack-icon"
                   src={tech.icon}
                   alt={tech.label}
+                  width={34}
+                  height={34}
+                  decoding="async"
                 />
               </li>
             ))}
@@ -86,7 +119,7 @@ export function HeroSection() {
         )}
 
         <ul className="hero__metrics">
-          {heroMetrics.map((metric) => (
+          {hero.metrics.map((metric) => (
             <li key={metric.value} className="hero__metric">
               <p className="hero__metric-value">{metric.value}</p>
               <p className="hero__metric-caption">{metric.caption}</p>
@@ -95,5 +128,5 @@ export function HeroSection() {
         </ul>
       </Container>
     </header>
-  );
+  )
 }

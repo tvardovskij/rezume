@@ -1,27 +1,27 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "Dmitry Tvardovsky | Fullstack Engineer",
   "short_name": "Tvardovsky",
-  "description": "Делаю продукты от идеи до продакшена: проектирую архитектуру, пишу frontend и backend, запускаю и сопровождаю.",
-  "lang": "ru-RU",
-  "start_url": "/",
-  "scope": "/",
+  "description": "Dmitry Tvardovsky portfolio",
+  "lang": "en-US",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#050505",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/logoMin.svg",
+      "src": "./logoMin.svg",
       "sizes": "600x600",
       "type": "image/svg+xml",
       "purpose": "any maskable"

@@ -40,16 +40,16 @@ src/
 
 ## Hero Rendering Stack
 
-1. Optimized GIF background (`hero-bg.optimized.gif`) rendered inside Hero only.
-2. Grain layer for cinematic texture.
-3. Blue full-frame color filter.
-4. Intersecting color circles with blend mode for local tint zones.
-5. Global blur layer for soft volumetric effect.
+1. Centered SVG infinity ambient used instead of GIF/video.
+2. Blue tint layer over the ambient to unify the palette.
+3. Local color filters (including pink accents) above the animation so moving elements pass through tint zones.
+4. Soft blur veil that pushes all animation visually behind the foreground content.
+5. Grain layer for cinematic texture.
 6. Content layer with nav, title, stack chips, and metrics.
 7. Bottom fadeout mask to merge Hero into absolute black next sections.
 
-## Media Pipeline
+## Hero Background Notes
 
-- Input: `public/media/hero/source/hero-original.gif`.
-- Output: `public/media/hero/hero-bg.optimized.gif`, `hero-bg.webm`, `hero-bg.mp4`.
-- Command: `npm run optimize:hero-media`.
+- The Hero no longer depends on GIF/video playback for first paint.
+- Infinite motion is achieved with SVG stroke offset animations plus soft ambient drift.
+- The Hero keeps all animated layers under the color filters and blur veil.
