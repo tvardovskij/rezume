@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const DEFAULT_SITE_URL = 'https://sdhgwow.github.io/rezume'
+const DEFAULT_SITE_URL = 'https://tvardovsky.tech'
 const DEFAULT_LOCALE = 'en'
 const ROOT_OUTPUT = 'index.html'
 const ROOT_PATH = '/'
@@ -156,7 +156,7 @@ function buildJsonLd({ authorName, alternateName, canonicalUrl, localeContent, o
         url: canonicalUrl,
         image: ogImageUrl,
         description: localeContent.seo.description,
-        sameAs: ['https://github.com/sdhgwow'],
+        sameAs: ['https://tvardovskij'],
         knowsAbout: [
           'React',
           'TypeScript',
