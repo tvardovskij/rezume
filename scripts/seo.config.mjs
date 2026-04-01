@@ -156,7 +156,7 @@ function buildJsonLd({ authorName, alternateName, canonicalUrl, localeContent, o
         url: canonicalUrl,
         image: ogImageUrl,
         description: localeContent.seo.description,
-        sameAs: ['https://tvardovskij'],
+        sameAs: ['https://github.com/tvardovskij'],
         knowsAbout: [
           'React',
           'TypeScript',
