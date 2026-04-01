@@ -302,11 +302,6 @@
     border-radius: 22px;
   }
 
-  .summary-project--msk-billing .summary-project__image,
-  .summary-project--voldrop .summary-project__image {
-    transform: translateY(6%);
-  }
-
   .summary-project--msk-landing .summary-project__image {
     transform: translateY(2%);
   }
