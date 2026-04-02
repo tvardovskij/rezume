@@ -9,6 +9,23 @@ import {
   resolveSeoConfig,
 } from './seo.config.mjs'
 
+async function writeFileIfChanged(filePath, contents) {
+  try {
+    const currentContents = await fs.readFile(filePath, 'utf8')
+
+    if (currentContents === contents) {
+      return
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      throw error
+    }
+  }
+
+  await fs.mkdir(path.dirname(filePath), { recursive: true })
+  await fs.writeFile(filePath, contents, 'utf8')
+}
+
 async function run() {
   const scriptDir = path.dirname(fileURLToPath(import.meta.url))
   const rootDir = path.resolve(scriptDir, '..')
@@ -28,21 +45,18 @@ async function run() {
   const pageWrites = config.pages.map((page) => {
     const pageHtml = applyTemplate(appTemplate, page.replacements)
     const absoluteOutputPath = path.join(rootDir, page.outputPath)
-    return fs.mkdir(path.dirname(absoluteOutputPath), { recursive: true }).then(() =>
-      fs.writeFile(absoluteOutputPath, pageHtml, 'utf8'),
-    )
+    return writeFileIfChanged(absoluteOutputPath, pageHtml)
   })
 
   const rootHtml = applyTemplate(rootTemplate, config.rootPage.replacements)
   const rootOutputPath = path.join(rootDir, config.rootPage.outputPath)
 
-  await fs.mkdir(publicDir, { recursive: true })
   await Promise.all([
     ...pageWrites,
-    fs.writeFile(rootOutputPath, rootHtml, 'utf8'),
-    fs.writeFile(robotsPath, config.robotsTxt, 'utf8'),
-    fs.writeFile(sitemapPath, buildSitemapXml(config), 'utf8'),
-    fs.writeFile(manifestPath, buildWebManifest(config), 'utf8'),
+    writeFileIfChanged(rootOutputPath, rootHtml),
+    writeFileIfChanged(robotsPath, config.robotsTxt),
+    writeFileIfChanged(sitemapPath, buildSitemapXml(config)),
+    writeFileIfChanged(manifestPath, buildWebManifest(config)),
     ...legacyPagePaths.map((legacyPath) => fs.rm(legacyPath, { force: true })),
   ])
 

@@ -1,8 +1,9 @@
 import type { MouseEvent } from 'react'
 import { Container } from '@/shared/ui/Container'
 import { useSiteLocale } from '@/app/providers/site-locale-context'
+import { cx } from '@/shared/lib/cx'
 import { HeroAmbientLogo } from './HeroAmbientLogo'
-import { heroTechIcons, showHeroTech } from './hero.data'
+import { heroTechIcons } from './hero.data'
 import './hero.css'
 
 export function HeroSection() {
@@ -50,13 +51,27 @@ export function HeroSection() {
           <div className="hero__nav-actions">
             <ul className="hero__menu">
               <li>
-                <a href="#about">{nav.about}</a>
+                <a className="hero__menu-link" href="#projects">
+                  {nav.projects}
+                </a>
               </li>
               <li>
-                <a href="#projects">{nav.projects}</a>
+                <a className="hero__menu-link" href="#stack">
+                  {nav.stack}
+                </a>
               </li>
               <li>
-                <a href={githubUrl} target="_blank" rel="noreferrer">
+                <a className="hero__menu-link" href="#contact">
+                  {nav.contact}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hero__menu-link"
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {nav.github}
                 </a>
               </li>
@@ -65,7 +80,10 @@ export function HeroSection() {
             <div className="hero__locale-switch" role="group" aria-label={nav.languageSwitchLabel}>
               <a
                 href={buildLocaleHref('ru')}
-                className={locale === 'ru' ? 'is-active' : undefined}
+                className={cx(
+                  'hero__locale-link',
+                  locale === 'ru' && 'hero__locale-link--active',
+                )}
                 lang="ru"
                 aria-current={locale === 'ru' ? 'page' : undefined}
                 onClick={(event) => handleLocaleClick(event, 'ru')}
@@ -74,7 +92,10 @@ export function HeroSection() {
               </a>
               <a
                 href={buildLocaleHref('en')}
-                className={locale === 'en' ? 'is-active' : undefined}
+                className={cx(
+                  'hero__locale-link',
+                  locale === 'en' && 'hero__locale-link--active',
+                )}
                 lang="en"
                 aria-current={locale === 'en' ? 'page' : undefined}
                 onClick={(event) => handleLocaleClick(event, 'en')}
@@ -85,7 +106,7 @@ export function HeroSection() {
           </div>
         </nav>
 
-        <div className="hero__intro" id="about">
+        <div className="hero__intro">
           <div className="hero__title-wrap">
             <h1 className="hero__title">{hero.title}</h1>
           </div>
@@ -96,7 +117,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        {showHeroTech && (
+        {heroTechIcons.length > 0 && (
           <ul className="hero__stack" aria-label={hero.stackLabel}>
             {heroTechIcons.map((tech) => (
               <li
@@ -120,7 +141,7 @@ export function HeroSection() {
 
         <ul className="hero__metrics">
           {hero.metrics.map((metric) => (
-            <li key={metric.value} className="hero__metric">
+            <li key={`${metric.value}-${metric.caption}`} className="hero__metric">
               <p className="hero__metric-value">{metric.value}</p>
               <p className="hero__metric-caption">{metric.caption}</p>
             </li>

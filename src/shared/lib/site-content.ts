@@ -25,8 +25,9 @@ export type LocaleContent = {
   nav: {
     homeLabel: string
     logoAlt: string
-    about: string
     projects: string
+    stack: string
+    contact: string
     github: string
     languageSwitchLabel: string
   }
@@ -39,10 +40,6 @@ export type LocaleContent = {
       value: string
       caption: string
     }[]
-  }
-  about: {
-    title: string
-    bulletPoints: string[]
   }
   projects: {
     eyebrow: string

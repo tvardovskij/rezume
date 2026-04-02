@@ -1,53 +1,62 @@
-# Resume Site (React + TypeScript + Vite)
+# Dmitry Tvardovsky Portfolio
 
-Профессиональный каркас резюме-сайта с Hero-блоком в стиле вашего референса:
+Portfolio / resume landing built with React, TypeScript, and Vite.
 
-- многослойный фон (GIF + зерно + цветофильтры + пересекающиеся круги + blur);
-- плавное затухание Hero в черный фон следующих секций;
-- модульная структура `app / sections / shared`.
+The project is a localized static site with separate English and Russian entries, custom section-based UI, and build-time SEO generation.
+
+## Stack
+
+- React 19
+- TypeScript 5
+- Vite 7
+- Plain CSS with section-scoped files
+
+## Project Structure
+
+```text
+src/
+  app/        app composition, providers, global styles
+  sections/   page sections with local markup, data, and CSS
+  shared/     shared utilities and UI primitives
+  content/    localized site content
+scripts/      SEO and asset-related scripts
+public/       static assets
+```
 
 ## Commands
 
 ```bash
+npm install
 npm run dev
 npm run build
 npm run lint
 npm run seo:generate
 ```
 
-## SEO Autogeneration
+## SEO Workflow
 
-SEO-файлы и мета-теги генерируются автоматически перед `dev/build/preview`:
+SEO files are generated from templates plus `src/content/site-content.json`.
 
-- `index.html` (из шаблона `index.template.html`);
-- `public/robots.txt`;
-- `public/sitemap.xml`;
-- `public/site.webmanifest`.
+`npm run seo:generate` updates:
 
-Для настройки создайте `.env` на основе `.env.example` и измените:
+- `index.html`
+- `en/index.html`
+- `ru/index.html`
+- `public/robots.txt`
+- `public/sitemap.xml`
+- `public/site.webmanifest`
 
-- `SEO_SITE_URL` (обязательно ваш production URL);
-- `SEO_TITLE`, `SEO_DESCRIPTION`, `SEO_OG_DESCRIPTION`, `SEO_TWITTER_DESCRIPTION`;
-- `SEO_KEYWORDS`;
-- verification-токены (`SEO_GOOGLE_SITE_VERIFICATION`, `SEO_YANDEX_VERIFICATION`, `SEO_BING_VERIFICATION`) при необходимости.
+The generator writes files only when content has actually changed, so routine local runs do not dirty the repo without a real diff.
 
-## GIF Optimization
+## Resume PDFs
 
-1. Положите исходник в `public/media/hero/source/hero-original.gif`.
-2. Запустите:
+Place localized resume files in `public/files/resume/`:
 
-```powershell
-npm run optimize:hero-media
-```
+- `dmitry-tvardovsky-resume-en.pdf`
+- `dmitry-tvardovsky-resume-ru.pdf`
 
-Будут созданы:
+## Deployment Notes
 
-- `public/media/hero/hero-bg.optimized.gif`
-- `public/media/hero/hero-bg.webm`
-- `public/media/hero/hero-bg.mp4`
-
-## Architecture
-
-Подробная схема и ответственность слоев:
-
-- `docs/ARCHITECTURE.md`
+- Production is configured for deployment from the domain root.
+- Localized pages live at `/en/` and `/ru/`.
+- Static assets are served from root-relative paths.

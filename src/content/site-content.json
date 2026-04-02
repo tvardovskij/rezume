@@ -14,8 +14,9 @@
       "nav": {
         "homeLabel": "Go to top",
         "logoAlt": "Dmitry Tvardovsky wordmark",
-        "about": "About me",
         "projects": "Projects",
+        "stack": "Stack",
+        "contact": "Contact",
         "github": "GitHub",
         "languageSwitchLabel": "Select language"
       },
@@ -41,14 +42,6 @@
             "value": "95+",
             "caption": "Lighthouse Performance score on production"
           }
-        ]
-      },
-      "about": {
-        "title": "How I work",
-        "bulletPoints": [
-          "I treat frontend and backend as one product system instead of two disconnected zones.",
-          "I care about performance from the first screen, not after release.",
-          "I am comfortable taking ownership of architecture, delivery, and production readiness end to end."
         ]
       },
       "projects": {
@@ -139,8 +132,9 @@
       "nav": {
         "homeLabel": "На главную",
         "logoAlt": "Логотип Дмитрия Твардовского",
-        "about": "Обо мне",
         "projects": "Проекты",
+        "stack": "Стек",
+        "contact": "Контакты",
         "github": "GitHub",
         "languageSwitchLabel": "Выбор языка"
       },
@@ -166,14 +160,6 @@
             "value": "95+",
             "caption": "оценка Lighthouse Performance на production"
           }
-        ]
-      },
-      "about": {
-        "title": "Как я работаю",
-        "bulletPoints": [
-          "Смотрю на frontend и backend как на одну продуктовую систему, а не на два изолированных слоя.",
-          "Думаю о скорости, стабильности и качестве интерфейса с первого экрана, а не после релиза.",
-          "Могу закрывать архитектуру, реализацию и production-подготовку end to end."
         ]
       },
       "projects": {
