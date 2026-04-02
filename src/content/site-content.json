@@ -22,8 +22,8 @@
       },
       "hero": {
         "title": "I'm an E2E Lead Fullstack Engineer",
-        "leadStart": "I build products end to end and stay deeply inside the systems I ship.",
-        "leadEnd": "For me, frontend and backend are one product system: I shape architecture, build interfaces, implement backend logic, and support production both solo and with a team.",
+        "leadStart": "I build products end to end.",
+        "leadEnd": "For me, frontend and backend are one system: I shape architecture, build interfaces, implement backend logic, and support production.",
         "stackLabel": "Core stack",
         "metrics": [
           {
@@ -140,8 +140,8 @@
       },
       "hero": {
         "title": "Я — E2E Lead Fullstack Engineer",
-        "leadStart": "Я собираю продукты end to end и глубоко вхожу в системы, которые делаю.",
-        "leadEnd": "Для меня frontend и backend — это единая продуктовая система: я проектирую архитектуру, собираю интерфейсы, реализую серверную логику и поддерживаю production как самостоятельно, так и в команде.",
+        "leadStart": "Собираю продукты end to end.",
+        "leadEnd": "Для меня frontend и backend — единая система: я проектирую архитектуру, собираю интерфейсы, реализую серверную логику и поддерживаю production.",
         "stackLabel": "Основной стек",
         "metrics": [
           {
