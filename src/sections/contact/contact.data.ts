@@ -37,7 +37,7 @@ const PROJECT_REPOSITORY_URL = 'https://github.com/tvardovskij/rezume'
 const contactProfileLinks = {
   telegram: '@dtvardovsky',
   linkedin: 'linkedin.com/in/tvardovsky',
-  vk: 'vk.com/tvardovsky',
+  vk: 'vk.com/dtvardovskij',
   instagram: 'instagram.com/tvardovsky',
   habr: 'habr.com/ru/users/tvardovsky/',
   email: 'dmitry@tvardovsky.tech',
